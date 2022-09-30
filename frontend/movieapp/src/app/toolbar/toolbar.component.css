@@ -1,0 +1,22 @@
+::ng-deep .menu {
+
+        background-color:  #060d17!important;
+    }
+
+    @media(max-width:480px){
+        .container-fluid{
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+            width: auto !important;
+        }
+    }
+
+    @media(max-width:800px){
+        .container-fluid{
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+            width: auto !important;
+        }
+    }

@@ -1,0 +1,71 @@
+version: '3.3'
+services:
+  mongoservice:
+    image: mongo
+    container_name: mongoservice
+    network_mode: host
+  mysqls:
+    image: mysql:5.5
+    container_name: mysqls
+    network_mode: host
+    environment:
+      MYSQL_ROOT_PASSWORD: Samarth@1
+      MYSQL_DATABASE: Movie
+
+  Recommendation:
+    image: externalapiimage
+    build: externalApi/
+    container_name: ordercont
+    network_mode: host
+    depends_on:
+      - mongoservice
+      - cloudgateway
+      - eurekaservice
+    restart: always
+  authservice:
+    image: usersecurity
+    container_name: user-auth
+    build: Userauth/
+    network_mode: host
+    depends_on:
+      -   mysqls
+      - cloudgateway
+      - eurekaservice
+    restart: always
+
+  cloudgateway:
+    image: gatewaycloud
+    container_name: gatwayservice
+    build: cloud/
+    network_mode: host
+    depends_on:
+      - eurekaservice
+    environment:
+      API_GATEWAY_PORT: 9000
+      EUREKA_SERVER_IP: localhost
+      EUREKA_SERVER_PORT: 8761
+    restart: always
+  eurekaservice:
+    image: eurekaserv
+    container_name: eurekaservice
+    build: EurekaServer/
+    network_mode: host
+    environment:
+      EUREKA_SERVER_PORT: 8761
+    restart: always
+
+  favourite-movie:
+    container_name: favourite-service
+    build: favourite/
+    hostname: localhost
+    network_mode: host
+    depends_on:
+      - mongoservice
+      - eurekaservice
+      - cloudgateway
+    restart: always
+
+
+
+
+

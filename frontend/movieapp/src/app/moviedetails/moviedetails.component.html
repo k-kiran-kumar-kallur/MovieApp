@@ -1,0 +1,74 @@
+<div style="background-color:#060d17;width: 100%;" class="body" >
+    <app-toolbar></app-toolbar>
+<img src="https://image.tmdb.org/t/p/original{{datastorage.poster_path}}" alt="" width="100%" height="400px" >
+<mat-card style="width: 89%; margin-right: auto;overflow: auto; margin-left:auto ; margin-top: -50px; background-color: #060d17; border-radius: 2%;  border: limegreen 2px solid" >
+    
+        <div class="row" style="display: grid; gap:40px;grid-template-columns: auto auto ;">
+          <div class="col">
+            <img  src="https://image.tmdb.org/t/p/original{{datastorage.poster_path}}" alt="" width="350px" height="500px"  style="border-radius: 20px; margin-top: 0px;" class="blaze">
+            <div style="background-color: #1c252f; border-radius: 10px; padding-top: 5px; padding-bottom:12px ; text-align: center;"><span style="color:white; "> Add to Favourite</span>
+                <a routerLink=""><mat-icon style="color:{{color}}; padding-top:5px" (click)="sendtofav(datastorage)"  >favorite</mat-icon></a></div>
+          </div>
+          <div class="details" style="color:aliceblue; ">
+            <ul style="list-style: none; margin-left: -50px;"  ><h1 class="roll-in-left"> {{datastorage.title}}</h1> 
+                <h2>{{datastorage.release_date}}</h2>
+                <img class="images" src="./assets/3VTI.gif" alt="" width="100%" height="100px"><br> <br>
+            <h3 class="tracking-in-expand ">{{datastorage.overview}}</h3>
+            <img class="images" src="./assets/779b0f296cbe13069e0424f82f64c8d3.gif" alt="" width="100%" height="100px">
+        <h3>Vote Average - {{datastorage.vote_average}}</h3>
+        <h3>Vote Count - {{datastorage.vote_count}}</h3>
+          
+        
+        
+      <!-- Main Body -->
+      <section id="commentsection" style="margin-left: -75px;">
+          
+                  <div  class="col-lg-4 col-md-5 col-sm-2 offset-md-1 offset-sm-1 col-12 mt-4">
+                      <form style="width: 55vw;" id="algin-form" data-toggle="tooltip" data-placement="top" title="you need to add to favorite to post a comment">                          <div class="form-group">
+                          <marquee behavior="" direction=""><h2>you need to add to favorite to post a comment</h2></marquee>   
+                        <h4>Leave a comment</h4>
+                              <label for="message">Message</label>
+                              <textarea [(ngModel)]="userComment" name="msg" id=""msg cols="30" rows="5" class="form-control" style="background-color: whitesmoke;"></textarea>
+                          </div>
+       
+                          
+                          <div class="form-group">
+                            <a routerLink="/moviedata" style="text-decoration: none;"> <button (click)="postComment()" type="button" id="post" class="btn">Post Comment</button></a>
+                          </div>
+                         
+                          <div  style="height:200px;width:50vw;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                                 
+                          <!-- yaha se karna -->
+                         <!-- <ul>
+                          <li *ngFor="let a of datacomments">
+                            <h2>{{a.username}}</h2>
+                            <h2>{{a.comment}}</h2>
+                          </li>
+                         </ul> -->
+
+                         <dl *ngFor="let a of datacomments">
+                       <div style="background-color:grey;">  <dt ><h2>{{a.username}} :-</h2></dt>
+                          <dd style="margin-left: 10px; margin-top: -20px;"><p>{{a.comment}}</p></dd>
+                        </div> 
+                        </dl>
+                              
+                            </div>
+
+                          
+                      </form>
+                      
+                  </div>
+             
+      </section>
+  
+       </ul>
+                
+                
+      
+          </div>
+         
+        </div>
+     
+  </mat-card>
+
+</div>

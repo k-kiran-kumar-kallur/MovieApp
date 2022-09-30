@@ -1,0 +1,5 @@
+FROM openjdk
+WORKDIR usr/lib
+ENV MONGO_URI=mongodb://localhost:27017/FavMovieDb
+ADD ./target/favourite-0.0.1-SNAPSHOT.jar /usr/lib/favourite-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","favourite-0.0.1-SNAPSHOT.jar"]

@@ -1,0 +1,46 @@
+<div style="background-image: url('./assets/wp5305145.webp');  background-size: cover; height: 100%;" class="body">
+<app-toolbar></app-toolbar>
+
+
+<form [formGroup]="register" (ngSubmit)="onsubmit()"  >
+  
+
+      <div class="example-container" style=" padding-top: 50px; margin-top: 50px;" >
+          <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;" >
+            <mat-label>Enter your userName</mat-label>
+            <input matInput placeholder="Enter your userName" formControlName="userName"  style="padding-right:100px ; "[(ngModel)]="registerobject.username">
+            <mat-error *ngIf="getusername().errors?.['required']"> can not be empty </mat-error>
+          
+          </mat-form-field>
+          <br> <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;" >
+              <mat-label>Enter your EmailId</mat-label>
+              <input matInput placeholder="Enter your email" formControlName="userEmailId" style="padding-right:100px ;" [(ngModel)]="registerobject.emailID">
+              <mat-error *ngIf="getEmailId().errors?.['required']"> can not be empty </mat-error>
+              <mat-error *ngIf="getEmailId().errors?.['email']"> enter a vaild email </mat-error>
+            
+            </mat-form-field>
+      
+       <br>
+       <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="userPassword" [(ngModel)]="registerobject.password" >
+            <mat-error *ngIf="getpassword().errors?.['required']">cannot be empty </mat-error>
+          </mat-form-field> 
+          <br>
+         <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;" >
+            <mat-label>Enter your Number</mat-label>
+            <input matInput placeholder="Enter your Contact number" formControlName="usernumber"  style="padding-right:100px ;" [(ngModel)]="registerobject.contactNO">
+            <mat-error *ngIf=" getusernumber().errors?.['required']"> can not be empty </mat-error>
+
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="primary"    type="submit" [disabled]="register.invalid"   style=" margin-left:206px;">Register</button>
+      
+          <br>
+          
+       
+      </div>
+      </form>
+   
+      
+        </div>

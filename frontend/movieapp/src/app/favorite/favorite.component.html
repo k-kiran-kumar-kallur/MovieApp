@@ -1,0 +1,23 @@
+<div  style="background-color: whitesmoke ; background-size: cover;" class="body"><app-toolbar></app-toolbar>
+<mat-grid-list cols="4" rowHeight="1:1.5" width="300px">
+    
+  <mat-grid-tile *ngFor="let a of favmovie">
+   
+    <a routerLink="/favdetails" style="text-decoration: none;" (click)="carddata(a)"><mat-card data-aos="zoom-in-down" class="example-card">
+    <mat-card-header>
+      
+      
+    </mat-card-header>
+  
+    <mat-card-content>
+      <img mat-card-image src="https://image.tmdb.org/t/p/original{{a.pictureURL}}" alt="Photo of a Shiba Inu" style="width: 300px; height:350px" >
+      <h1 class="long-text" style="font-family: 'Lobster', cursive;"> {{a.movieName}}</h1>
+     <h1 style="font-family: 'Silkscreen', cursive;" >{{a.releaseDate}}</h1>
+
+    </mat-card-content>
+  
+  </mat-card></a>
+</mat-grid-tile>
+ 
+</mat-grid-list>
+</div>

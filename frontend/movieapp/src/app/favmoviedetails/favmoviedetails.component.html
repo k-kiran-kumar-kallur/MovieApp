@@ -1,0 +1,28 @@
+<div style="background-color: #060d17;" class="body" >
+    <app-toolbar></app-toolbar>
+<img src="https://image.tmdb.org/t/p/original{{datastorage.pictureURL}}" alt="" width="100%" height="400px" >
+<mat-card style="width: 89%; margin-right: auto; margin-left:auto ; margin-top: -50px; background-color: #060d17; border-radius: 2%;  border: limegreen 2px solid" >
+    
+        <div class="row" style="display: grid; gap:40px;grid-template-columns: auto auto ;">
+          <div class="col">
+            <img src="https://image.tmdb.org/t/p/original{{datastorage.pictureURL}}" alt="" width="350px" height="500px"  style="border-radius: 20px; margin-top: 0px;">
+            <div style="background-color: #1c252f; border-radius: 10px; padding-top: 5px; padding-bottom:12px ; text-align: center;"><span style="color:white; ">remove Favourite</span>
+                <a routerLink="/favourite"><mat-icon style="color:white; padding-top:5px" (click)="remove(datastorage)">clear</mat-icon></a></div>
+          </div>
+          <div class="col" style="color:aliceblue; ">
+            <ul style="list-style: none; margin-left: -50px;"><h1>{{datastorage.movieName}}</h1> 
+                <h2>{{datastorage.releaseDate}}</h2>
+                <img src="./assets/3VTI.gif" alt="" width="100%" height="100px"><br> <br>
+            <h3>{{datastorage.overview}}</h3>
+            <img src="./assets/779b0f296cbe13069e0424f82f64c8d3.gif" alt="" width="100%" height="100px">
+       </ul>
+                
+                
+      
+          </div>
+         
+        </div>
+     
+  </mat-card>
+
+</div>

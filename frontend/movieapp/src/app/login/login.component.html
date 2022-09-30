@@ -1,0 +1,30 @@
+ <div class="login" style="background-image: url('./assets/mr-bean-facebook-cover.jpg'); background-size: cover; height: 661px;" class="body">
+ <app-toolbar></app-toolbar>
+
+  
+            <form  [formGroup]="profileForm" (ngSubmit)="onsubmit()" id="side" style="margin-left: 140px; width: 100px; margin-top: 70px;">
+                <div class="example-container" style=" padding-top: 50px;">
+                    <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;" color="accent" >
+                      <mat-label>Enter your userName</mat-label>
+                      <input matInput placeholder="Enter your userName" formControlName="name"  style="padding-right:100px ;" [(ngModel)]="userLogin.username">
+                      <mat-error *ngIf="getusername().errors?.['required']"> can not be empty </mat-error>
+                      
+                    </mat-form-field>
+                
+                 <br>
+                 <mat-form-field appearance="fill" style="margin-left: 100px; width: 300px;">
+                      <mat-label>Enter your password</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="pass" [(ngModel)]="userLogin.password">
+                      <mat-error *ngIf="getpassword().errors?.['required']">cannot be empty </mat-error>
+                     
+                    </mat-form-field> 
+                    <br>
+                    <button mat-raised-button color="accent" type="submit" [disabled]="profileForm.invalid"   style=" margin-left:215px;">Signin</button>
+                 <br>
+                    <br>
+                    <button mat-raised-button color="primary" routerLink="/register"   style=" margin-left:190px;">Create account</button>
+                 
+                </div>
+                </form>
+       
+            </div>

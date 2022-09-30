@@ -1,0 +1,33 @@
+<mat-toolbar style=" background-color:#060d17;color: white;  position: sticky; z-index: 11;
+top: 0; " class="container-fluid"  >
+   <a routerLink="/"><div>  <img src="assets/logo.png" alt="logo" style="height: 75px;width:75px ;"></div></a> 
+   <a routerLink="/"  style="text-decoration: none;" > <div> <span style="font-family: 'Rubik Maze', cursive;font-size: 30px;margin-right: 50px; color: white;" >Prasaaran</span></div>   </a>
+  
+      <div><a routerLink="/favourite"><button mat-raised-button color="accent" style="border-top-right-radius: 20px;border-bottom-left-radius: 20px;margin-right:150px ;">Favourite Movies</button></a></div> 
+     
+      <div><span>    
+           <input type="text" placeholder="Search Movies" style="border: none;border-radius: 10px;" [(ngModel)]="searchbar">
+     </span></div> 
+     <a routerLink="/searchbar"> <div style="margin-left: 5px;"><span class="material-icons teal-color" style="color: teal;font-size: 35px;margin-right: 330px;" (click)="searchmethod(); " > manage_search</span></div> </a>
+  
+     <div style="display:{{logo}};"><span class='material-icons' style="margin: left 200px;"><a routerLink="/login" style="color:white; text-decoration: none;">face</a></span></div> 
+      <div style="display:{{logo}} ;"><span style="font-size:15px" > <a routerLink="/login" style="color:white; text-decoration: none;"> &nbsp;login | sign-up</a></span></div> 
+    <div style="margin-left:60px ;">  <div style="display: {{avatar}}; " ><button mat-button [matMenuTriggerFor]="menu"><img style="width:60px; border-radius:100px;height:60px ;"   src="./assets/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg" alt=""></button>
+         <mat-menu class="menu" #menu="matMenu" >
+           <button style="color: white;" mat-menu-item>{{name}}</button>
+           <a href="/" style="text-decoration: none;">  <button style="color: white;" mat-menu-item>Logout <mat-icon style="color: white;">exit_to_app</mat-icon>
+
+           </button></a>
+         </mat-menu>
+         </div></div>
+    </mat-toolbar>
+    <!-- ===============================================================================
+     -->
+
+
+
+
+
+
+
+     

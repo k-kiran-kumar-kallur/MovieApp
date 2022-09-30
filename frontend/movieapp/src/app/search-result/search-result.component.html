@@ -1,0 +1,19 @@
+<div style="background-color: whitesmoke; background-repeat: no-repeat; background-size: cover;" class="body">
+    <app-toolbar></app-toolbar>
+
+    <mat-grid-list id="search" cols="2" rowHeight="4:1" width="300px">
+        <mat-grid-tile *ngFor="let a of data">
+          <a routerLink="/moviedata" style="text-decoration: none;"><mat-card class="example-card" style="width :500px;" (click)="carddata(a)" data-aos="zoom-in-down">
+        <mat-card-title-group>
+          <mat-card-title>{{a.title}}</mat-card-title>
+          <img id="img1" mat-card-sm-image src="https://image.tmdb.org/t/p/original{{a.poster_path}}" >
+        </mat-card-title-group>
+        <mat-card-content>
+          
+        </mat-card-content>
+      </mat-card></a>
+    </mat-grid-tile>
+ 
+</mat-grid-list>
+
+</div>

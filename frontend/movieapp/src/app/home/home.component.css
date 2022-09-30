@@ -1,0 +1,21 @@
+
+  .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: (7,1fr);
+  
+  }
+  .body{
+    animation: transition 1.2s;
+    }
+    @keyframes transition
+     {
+        from {
+    opacity: 0;
+    transform: translateY(-100px);
+        }
+        to{
+    opacity: 1;
+    transform: translateY(0px);
+        }
+    }

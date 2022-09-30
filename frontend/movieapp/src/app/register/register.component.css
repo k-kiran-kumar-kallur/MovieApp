@@ -1,0 +1,35 @@
+.body{
+    animation: transition .5s;
+    }
+    @keyframes transition
+     {
+        from {
+    opacity: 0;
+    transform: translateY(-10px);
+        }
+        to{
+    opacity: 1;
+    transform: translateY(0px);
+        }
+    }
+
+    @media(max-width:480px){
+        .body{
+            height: 0px !important;
+        }
+        .example-container{
+            margin-left: -100px !important;
+        }
+    }
+
+    @media(max-width:800px){
+        .body{
+            height: 0px !important;
+            width: auto;
+        }
+        .example-container{
+            margin-left: -50px !important;
+        }
+    }
+
+   

@@ -1,0 +1,61 @@
+.long-text{
+    width: 20ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+
+
+.example-card{
+
+  transition: all 0.2s ease-in-out;}
+.example-card:hover {
+  transform: scale(0.8);
+  }
+
+  @media(max-width:480px){
+    #img1{
+      width: 100px;
+      height: 150px;
+
+    }
+
+    #title{
+    
+      font-size: 10px
+    }
+
+    .pagination{
+      display: flex;
+      flex-wrap: wrap;
+      width: auto;
+    }
+
+    #sidegap{
+      margin-left: 0px !important;
+    }
+  }
+
+  @media( max-width:800px){
+    #img1{
+      width: 200px;
+      height: 250px;
+
+    }
+
+    #title{
+    
+      font-size: 10px
+    }
+
+    .pagination{
+      display: flex;
+      flex-wrap: wrap;
+      width: auto;
+    }
+
+    #sidegap{
+      margin-left: 0px !important;
+    }
+  }
